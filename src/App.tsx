@@ -1,8 +1,10 @@
 import React from 'react';
+import {notes} from './helpers';
+import Octave from './Octave';
 
 function App() {
   return (
-    <div>React Keyboard!</div>
+    <div><Octave notes={notes} /></div>
   );
 }
 
