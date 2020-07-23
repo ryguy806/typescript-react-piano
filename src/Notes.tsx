@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 const Black = styled.button`
@@ -30,13 +30,14 @@ box-shadow: 2px 5px;
 type Props = {
     color: string;
     note: string;
+    clickHandler: (e: MouseEvent<HTMLButtonElement>) => void
 }
 
-const Note: React.FC<Props> = ({color, note}) => (
+const Note: React.FC<Props> = ({color, note, clickHandler}) => (
     color === 'white' ? (
-        <White value={note} />
+        <White value={note} onClick={clickHandler} />
     ) : (
-        <Black value={note} />
+        <Black value={note} onClick={clickHandler} />
     )
 );
 

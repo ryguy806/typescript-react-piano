@@ -12,9 +12,10 @@ const Wrapper = styled.div`
 
 type Props = {
     notes: NoteType[];
+    clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const Octave: React.FC<Props> = ({notes}) => (
+const Octave: React.FC<Props> = ({notes, clickHandler}) => (
     <Wrapper>
         <div>
             {notes.map((element: NoteType) => (
@@ -22,6 +23,7 @@ const Octave: React.FC<Props> = ({notes}) => (
                     key={element.note}
                     color={element.color}
                     note={element.note}
+                    clickHandler={clickHandler}
                 />
             ))}
         </div>
