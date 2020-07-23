@@ -13,9 +13,9 @@ const Octave: React.FC<Props> = ({notes}) => (
                 key={element.note}
                 color={element.color}
                 note={element.note}
-            >
+            />
         ))}
     </div>
-)
+); 
 
 export default Octave;
